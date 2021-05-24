@@ -1,0 +1,110 @@
+ifndef::snippets[]
+:snippets: ../../../build/generated-snippets
+endif::[]
+= RESTful Notes API Guide
+Dong Bin Lee;
+:doctype: manpage
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[[overview]]
+= Overview
+
+[[overview-http-verbs]]
+== HTTP verbs
+
+RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP verbs.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PATCH`
+| Used to update an existing resource, including partial updates
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[overview-http-status-codes]]
+== HTTP status codes
+
+RESTful notes tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `201 Created`
+| A new resource has been created successfully. The resource's URI is available from the response's
+`Location` header
+
+| `204 No Content`
+| An update to an existing resource has been applied successfully
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information
+
+| `404 Not Found`
+| The requested resource did not exist
+|===
+
+[[To-Do-저장-API]]
+== 1. To-Do 저장 API
+=== 1.1 요청 파라미터
+include::{snippets}/todo/save/request-fields.adoc[]
+=== 1.2 응답 파라미터
+include::{snippets}/todo/save/response-fields.adoc[]
+==== 요청 예제
+include::{snippets}/todo/save/http-request.adoc[]
+==== 응답 예제
+include::{snippets}/todo/save/http-response.adoc[]
+
+== 2. To-Do 수정 API
+=== 2.1 요청 파라미터
+include::{snippets}/todo/modify/path-parameters.adoc[]
+include::{snippets}/todo/modify/request-fields.adoc[]
+=== 2.2 응답 파라미터
+include::{snippets}/todo/modify/response-fields.adoc[]
+==== 요청 예제
+include::{snippets}/todo/modify/http-request.adoc[]
+==== 응답 예제
+include::{snippets}/todo/modify/http-response.adoc[]
+
+== 3. To-Do 목록 API
+=== 3.1 응답 파라미터
+include::{snippets}/todo/get-all/response-fields.adoc[]
+==== 요청 예제
+include::{snippets}/todo/get-all/http-request.adoc[]
+==== 응답 예제
+include::{snippets}/todo/get-all/http-response.adoc[]
+
+== 4. To-Do 삭제
+=== 4.1 요청 파라미터
+include::{snippets}/todo/delete/path-parameters.adoc[]
+=== 4.2 응답 파라미터
+include::{snippets}/todo/delete/response-fields.adoc[]
+==== 요청 예제
+include::{snippets}/todo/delete/http-request.adoc[]
+==== 응답 예제
+include::{snippets}/todo/delete/http-response.adoc[]
+
+== 5. To-Do 전체 삭제
+=== 5.1 응답 파라미터
+include::{snippets}/todo/delete-all/response-fields.adoc[]
+==== 요청 예제
+include::{snippets}/todo/delete-all/http-request.adoc[]
+==== 응답 예제
+include::{snippets}/todo/delete-all/http-response.adoc[]
